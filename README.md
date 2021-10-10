@@ -9,6 +9,18 @@ React Hook Form v7 & Yup validation
 Firestore Web v9
 Redux & Thunks with a duck structure
 
+In order to set up the project:
+
+Download/Clone the project
+
+`yarn`
+
+set up the .env
+
+`yarn start`
+
+Here you can find the deployed version of the project: https://mdemora-to-to-list.web.app/
+
 
 
 # MdeMora-Skeleton
