@@ -1,6 +1,5 @@
 import React from "react"
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material"
-import MenuIcon from "@mui/icons-material/Menu"
+import { AppBar, Button, Toolbar, Typography } from "@mui/material"
 import { useSelector, useDispatch } from "react-redux"
 import { signInWithGoogleAction, signOutAction } from "redux/ducks/userDuck"
 import { useHistory } from "react-router-dom"
@@ -9,8 +8,6 @@ const Navbar = () => {
   const { user } = useSelector(state => state.user)
   const dispatch = useDispatch()
   const history = useHistory()
-
-  console.log(user)
 
   return (
     <AppBar position="sticky">

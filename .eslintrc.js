@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ["react", "prettier"],
   rules: {
-    indent: ["error", 2, { SwitchCase: 1 }],
+    indent: ["warn", 2, { SwitchCase: 1 }],
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "never"],

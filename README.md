@@ -2,8 +2,14 @@
 
 This project has been bootstrapped from my own source repository MdeMora-Skeleton
 
-NODE_PATH="src/"
-REACT_APP_GOOGLE_API_KEY = "AIzaSyCmsOEDXU2wN0iWrYO8JeudHLjiODt_xeo"
+I hope you enjoy this project. It showcases a To-do List created with the latest technologies:
+
+Material UI v5 / emotion with an a styled components approach
+React Hook Form v7 & Yup validation
+Firestore Web v9
+Redux & Thunks with a duck structure
+
+
 
 # MdeMora-Skeleton
 
