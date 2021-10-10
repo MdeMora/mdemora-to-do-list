@@ -15,6 +15,10 @@ const Routes = () => {
   useEffect(() => {
     if (!user) history.push("/")
   }, [history])
+
+  useEffect(() => {
+    if (user) history.push("/app")
+  }, [user])
   return (
     <Switch>
       {/* home route */}
