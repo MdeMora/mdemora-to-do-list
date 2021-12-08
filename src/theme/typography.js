@@ -1,21 +1,13 @@
 //@MdeMora This is the skeleton to create a personalized typography theme. Roboto is recommended by Material UI
-export const fontFamily = ["Roboto", "sans-serif"].join()
-
-// export const customFont = [
-//   "customFont",
-//   "Helvetica Neue",
-//   "Arial",
-//   "sans-serif"
-// ].join()
+export const headerFontFamily = ["Merriweather", "sans-serif"].join()
+export const fontFamily = ["Montserrat", "sans-serif"].join()
 
 const typography = {
-  fontFamily
-  // h1: {
-  //   fontFamily: customFont,
-  //   fontSize: 130,
-  //   lineHeight: "144px",
-  //   color: "white",
-  // },
+  fontFamily,
+  h1: {
+    fontFamily: headerFontFamily,
+    fontSize: 96
+  },
   // h2: {
   //   fontFamily: customFont,
   //   fontSize: 80,
@@ -51,12 +43,12 @@ const typography = {
   //   fontWeight: 600,
   //   lineHeight: "30px"
   // },
-  // body1: {
-  //   fontFamily,
-  //   fontSize: 16,
-  //   fontWeight: 400,
-  //   lineHeight: "24px"
-  // },
+  body1: {
+    fontFamily,
+    fontSize: 16,
+    fontWeight: 400,
+    lineHeight: "24px"
+  }
   // button: {
   //   fontFamily,
   //   fontSize: 14,

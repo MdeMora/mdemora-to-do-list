@@ -9,7 +9,7 @@ export const TaskCard = styled(Card)`
   margin: ${theme.spacing(1)};
   border: 4px solid
     ${({ finished }) =>
-      finished ? "rgba(0, 0, 0, 0.3)" : theme.palette.primary.main};
+      finished ? "rgba(0, 0, 0, 0.3)" : theme.palette.green300};
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }

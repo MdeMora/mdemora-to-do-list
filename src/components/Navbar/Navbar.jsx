@@ -13,7 +13,7 @@ const Navbar = () => {
     <AppBar position="sticky">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          {user?.name} To-Do List
+          TaskMora
         </Typography>
         {user ? (
           <Button

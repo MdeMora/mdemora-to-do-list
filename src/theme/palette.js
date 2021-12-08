@@ -1,6 +1,6 @@
 // @MdeMora: This is the skeleton to create a personalized theme with Material UI
 
-import { white, black, blue, green, yellow, orange, purple } from "./colors"
+import { white, black, green, red, beige } from "./colors"
 
 const THEME_TYPES = {
   DARK: "dark",
@@ -11,41 +11,36 @@ export const darkPalette = {
   type: THEME_TYPES.DARK,
   white,
   black,
-  ...blue,
   ...green,
-  ...yellow,
-  ...orange,
-  ...purple
+  ...red,
+  ...beige
 }
 
 export const lightPalette = {
   type: THEME_TYPES.LIGHT,
-  // primary: {
-  //   contrastText: black,
-  //   dark: blue.blue300,
-  //   main: blue.blue500,
-  //   light: blue.blue700
-  // },
-  // secondary: {
-  //   contrastText: black,
-  //   dark: green.green700,
-  //   main: green.green500,
-  //   light: green.green300
-  // },
-  text: {
-    primary: purple.purple500
-    // secondary: "rgba(0,0,0,0.6)",
-    // link: green.green500
+  primary: {
+    contrastText: black,
+    dark: green.green700,
+    main: green.green700,
+    light: green.green500
   },
-  // background: {
-  //   default: purple.purple500,
-  //   paper: purple.purple700
-  // },
+  secondary: {
+    contrastText: black,
+    dark: red.red500,
+    main: red.red500,
+    light: beige.beige700
+  },
+  text: {
+    primary: black,
+    secondary: "rgba(0,0,0,0.6)",
+    link: green.green700
+  },
+  background: {
+    default: beige.beige300
+  },
   white,
   black,
-  ...blue,
   ...green,
-  ...yellow,
-  ...orange,
-  ...purple
+  ...beige,
+  ...red
 }
