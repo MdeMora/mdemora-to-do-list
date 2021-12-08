@@ -8,64 +8,63 @@ const typography = {
     fontFamily: headerFontFamily,
     fontSize: 96
   },
-  // h2: {
-  //   fontFamily: customFont,
-  //   fontSize: 80,
-  //   fontWeight: 600,
-  //   lineHeight: "80px",
-  // },
-  // h3: {
-  //   fontFamily: customFont,
-  //   fontSize: 48,
-  //   fontWeight: 600,
-  //   lineHeight: "56px"
-  // },
-  // h4: {
-  //   fontFamily: customFont,
-  //   fontSize: 30,
-  //   lineHeight: "30px"
-  // },
-  // h5: {
-  //   fontFamily: customFont,
-  //   fontSize: 20,
-  //   fontWeight: 600,
-  //   lineHeight: "22px",
-
-  // },
-  // h6: {
-  //   fontFamily: customFont,
-  //   fontSize: 48,
-  //   lineHeight: "48px"
-  // },
-  // subtitle1: {
-  //   fontFamily,
-  //   fontSize: 30,
-  //   fontWeight: 600,
-  //   lineHeight: "30px"
-  // },
+  h2: {
+    fontFamily: headerFontFamily,
+    fontSize: 72,
+    fontWeight: "bold"
+  },
+  h3: {
+    fontFamily: headerFontFamily,
+    fontSize: 64,
+    fontWeight: "bold"
+  },
+  h4: {
+    fontFamily: headerFontFamily,
+    fontSize: 48,
+    fontWeight: "bold"
+  },
+  h5: {
+    fontFamily: headerFontFamily,
+    fontSize: 36,
+    fontWeight: "bold"
+  },
+  h6: {
+    fontFamily: headerFontFamily,
+    fontSize: 24,
+    fontWeight: "bold"
+  },
+  subtitle1: {
+    fontFamily: headerFontFamily,
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+  subtitle2: {
+    fontFamily: fontFamily,
+    fontSize: 20
+  },
   body1: {
     fontFamily,
+    fontSize: 16
+  },
+  body2: {
+    fontFamily,
     fontSize: 16,
-    fontWeight: 400,
-    lineHeight: "24px"
+    fontWeight: "bold"
+  },
+  button: {
+    fontFamily: headerFontFamily,
+    fontWeight: "bold"
+  },
+  caption: {
+    fontFamily: fontFamily,
+    fontSize: 12,
+    textTransform: "uppercase"
+  },
+  overline: {
+    fontFamily: fontFamily,
+    fontSize: 12,
+    lineHeight: "18px"
   }
-  // button: {
-  //   fontFamily,
-  //   fontSize: 14,
-  //   fontWeight: 600,
-  //   lineHeight: "20px"
-  // },
-  // caption: {
-  //   fontFamily: customFont,
-  //   fontSize: 15,
-  //   fontStyle: "italic",
-  //   lineHeight: "16px"
-  // },
-  // overline: {
-  //   fontFamily,
-  //   fontSize: 12,
-  //   lineHeight: "18px"
-  // }
 }
 
 export default typography
