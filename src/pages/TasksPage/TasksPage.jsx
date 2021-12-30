@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 
-import { Fab, Box, Tabs, Tab, Typography } from "@mui/material"
+import { Fab, Box, Tabs, Tab, Typography, Button } from "@mui/material"
 import AddIcon from "@mui/icons-material/Add"
 
 import TaskDialog from "components/TaskDialog"
@@ -14,7 +14,7 @@ import {
   deleteTaskAction
 } from "redux/ducks/taskDuck"
 import TaskCard from "components/TaskCard"
-import { TaskList } from "./TasksPageStyledComponents"
+import { TaskList } from "./TasksPageSC"
 
 const TabPanel = ({ className, children, value, index, prerender }) => (
   <div
@@ -88,24 +88,44 @@ const TasksPage = () => {
   const finishedTasks = sortedTasks.filter(task => task.finished)
 
   return (
-    <Box maxWidth={900} margin="0 auto" flex="1">
-      <Tabs
-        value={value}
-        onChange={handleTabChange}
-        aria-label="basic tabs example"
-      >
-        <Tab label="Active Tasks" id="active" />
-        <Tab label="Finished Tasks" id="finished" />
-      </Tabs>
-      <Box mt={4} />
-      <TabPanel value={value} index={0}>
-        <TaskList>
+    <Box flex="1">
+      <Box maxWidth={900} margin="120px auto">
+        <Tabs
+          value={value}
+          onChange={handleTabChange}
+          aria-label="tabs"
+          centered
+        >
+          <Tab label="Active Tasks" id="active" />
+          <Tab label="Finished Tasks" id="finished" />
+        </Tabs>
+        <Box mt={4} />
+        <TabPanel value={value} index={0}>
+          <TaskList>
+            {activeTasks.length === 0 ? (
+              <Box mt={4}>
+                <Typography variant="h3">Create your first Task!</Typography>
+              </Box>
+            ) : (
+              activeTasks.map((task, idx) => (
+                <TaskCard
+                  key={idx}
+                  task={task}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                  onFinish={handleFinish}
+                />
+              ))
+            )}
+          </TaskList>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
           {activeTasks.length === 0 ? (
             <Box mt={4}>
-              <Typography variant="h3">Create your first Task!</Typography>
+              <Typography variant="h3">Finish a Task!</Typography>
             </Box>
           ) : (
-            activeTasks.map((task, idx) => (
+            finishedTasks.map((task, idx) => (
               <TaskCard
                 key={idx}
                 task={task}
@@ -115,40 +135,33 @@ const TasksPage = () => {
               />
             ))
           )}
-        </TaskList>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        {activeTasks.length === 0 ? (
-          <Box mt={4}>
-            <Typography variant="h3">Finish a Task!</Typography>
-          </Box>
-        ) : (
-          finishedTasks.map((task, idx) => (
-            <TaskCard
-              key={idx}
-              task={task}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              onFinish={handleFinish}
-            />
-          ))
-        )}
-      </TabPanel>
+        </TabPanel>
 
-      <TaskDialog
-        open={openTaskDialog}
-        onClose={handleClose}
-        onSave={handleSave}
-        task={selectedTask}
-      />
-      <Fab
-        color="primary"
-        aria-label="add"
-        onClick={openDialog}
-        style={{ position: "fixed", bottom: "32px", right: "32px" }}
-      >
-        <AddIcon />
-      </Fab>
+        <TaskDialog
+          open={openTaskDialog}
+          onClose={handleClose}
+          onSave={handleSave}
+          task={selectedTask}
+        />
+
+        <Box
+          sx={{
+            borderTop: "1px solid #6B705C",
+            width: "100%",
+            justifyContent: "left",
+            display: "flex",
+            alignItems: "center",
+            paddingTop: "16px"
+          }}
+        >
+          <Button onClick={openDialog} sx={{ textTransform: "capitalize" }}>
+            <AddIcon />
+            <Typography variant="subtitle2" color="black">
+              Add
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
     </Box>
   )
 }

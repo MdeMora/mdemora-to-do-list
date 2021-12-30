@@ -10,7 +10,7 @@ import CodeSvg from "assets/undraw_Dev_focus_re_6iwt.svg"
 import URL from "constants/navigation"
 import { useMediaQuery } from "hooks"
 
-import { ctm, todoSVG } from "./HomePageStyledComponents"
+import { ctm, todoSVG } from "./HomePageSC"
 
 const HomePage = () => {
   const dispatch = useDispatch()

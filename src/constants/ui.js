@@ -1,7 +1,1 @@
-export const sizes = {
-  footerHeight: 32
-}
-
-const UI = { sizes }
-
-export default UI
+export const FOOTER_HEIGHT = 32
