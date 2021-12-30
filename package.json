@@ -11,6 +11,7 @@
     "@mui/material": "^5.0.2",
     "@mui/styles": "^5.0.1",
     "cra-template": "1.1.2",
+    "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",

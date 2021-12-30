@@ -1,12 +1,12 @@
 import React from "react"
-import UI from "constants/ui"
+import { FOOTER_HEIGHT } from "constants/ui"
 import { Box, Typography, useTheme } from "@mui/material"
 
 const Footer = () => {
   const theme = useTheme()
   return (
     <Box
-      height={UI.sizes.footerHeight}
+      height={FOOTER_HEIGHT}
       backgroundColor={theme.palette.primary.main}
       display="flex"
       alignItems="center"
