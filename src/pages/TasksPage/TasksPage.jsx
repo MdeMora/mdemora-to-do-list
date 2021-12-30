@@ -75,6 +75,10 @@ const TasksPage = () => {
     editTaskAction(user, { ...task, finished: true })(dispatch)
   }
 
+  const handleRestore = task => {
+    editTaskAction(user, { ...task, finished: false })(dispatch)
+  }
+
   useEffect(() => {
     getTasksAction(user)(dispatch)
   }, [])
@@ -121,6 +125,7 @@ const TasksPage = () => {
                   onEdit={handleEdit}
                   onDelete={handleDelete}
                   onFinish={handleFinish}
+                  onRestore={handleRestore}
                 />
               ))
             )}
@@ -139,6 +144,7 @@ const TasksPage = () => {
                 onEdit={handleEdit}
                 onDelete={handleDelete}
                 onFinish={handleFinish}
+                onRestore={handleRestore}
               />
             ))
           )}
