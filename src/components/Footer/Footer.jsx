@@ -3,7 +3,6 @@ import UI from "constants/ui"
 import { Box, Typography, useTheme } from "@mui/material"
 
 const Footer = () => {
-  console.log(UI)
   const theme = useTheme()
   return (
     <Box

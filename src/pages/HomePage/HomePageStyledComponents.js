@@ -1,7 +1,14 @@
-import { Button } from "@mui/material"
-import styled from "@emotion/styled"
+export const ctm = ({ theme }) => ({
+  ...theme.typography.h4,
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.beige300,
+  ":hover": {
+    color: theme.palette.primary.main
+  }
+})
 
-export const StyledButton = styled(Button)``
-export const TodoSVG = styled.img`
-  height: 250px;
-`
+export const todoSVG = () => ({
+  position: "absolute",
+  width: "calc(100vw / 1.4 - 390px)",
+  right: 0
+})

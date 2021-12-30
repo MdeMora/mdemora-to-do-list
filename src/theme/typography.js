@@ -6,32 +6,50 @@ const typography = {
   fontFamily,
   h1: {
     fontFamily: headerFontFamily,
-    fontSize: 96
+    fontSize: 96,
+    "@media (max-width:900px)": {
+      fontSize: 32
+    }
   },
   h2: {
     fontFamily: headerFontFamily,
     fontSize: 72,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@media (max-width:900px)": {
+      fontSize: 30
+    }
   },
   h3: {
     fontFamily: headerFontFamily,
     fontSize: 64,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@media (max-width:900px)": {
+      fontSize: 28
+    }
   },
   h4: {
     fontFamily: headerFontFamily,
     fontSize: 48,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@media (max-width:900px)": {
+      fontSize: 26
+    }
   },
   h5: {
     fontFamily: headerFontFamily,
     fontSize: 36,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@media (max-width:900px)": {
+      fontSize: 24
+    }
   },
   h6: {
     fontFamily: headerFontFamily,
     fontSize: 24,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "@media (max-width:900px)": {
+      fontSize: 22
+    }
   },
   subtitle1: {
     fontFamily: headerFontFamily,
