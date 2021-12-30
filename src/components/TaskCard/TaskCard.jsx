@@ -6,6 +6,7 @@ import { Box, IconButton, Typography, Tooltip } from "@mui/material"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
+import RestoreIcon from "@mui/icons-material/Restore"
 
 import {
   TaskCard,
@@ -15,7 +16,7 @@ import {
   TaskCardDate,
 } from "./TaskCardSC"
 
-const TaskItem = ({ task, onEdit, onFinish, onDelete }) => {
+const TaskItem = ({ task, onEdit, onFinish, onDelete, onRestore }) => {
   const [active, setActive] = useState(false)
 
   return (
@@ -26,11 +27,20 @@ const TaskItem = ({ task, onEdit, onFinish, onDelete }) => {
     >
       {active && (
         <>
-          <Tooltip title="Complete">
-            <IconButton onClick={() => onFinish(task)} color="success">
-              <CheckCircleIcon />
-            </IconButton>
-          </Tooltip>
+          {!task.finished ? (
+            <Tooltip title="Complete">
+              <IconButton onClick={() => onFinish(task)} color="success">
+                <CheckCircleIcon />
+              </IconButton>
+            </Tooltip>
+          ) : (
+            <Tooltip title="Restore">
+              <IconButton onClick={() => onRestore(task)} color="success">
+                <RestoreIcon />
+              </IconButton>
+            </Tooltip>
+          )}
+
           <Box mr={3} />
         </>
       )}
@@ -72,6 +82,7 @@ TaskItem.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onFinish: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
+  onRestore: PropTypes.func.isRequired,
 }
 
 export default TaskItem
