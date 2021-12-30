@@ -1,5 +1,4 @@
 import React from "react"
-import { useTheme } from "@mui/system"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router"
 import styled from "@emotion/styled"
@@ -9,9 +8,9 @@ import { Typography, Box, Button } from "@mui/material"
 import { signInWithGoogleAction } from "redux/ducks/userDuck"
 import CodeSvg from "assets/undraw_Dev_focus_re_6iwt.svg"
 import URL from "constants/navigation"
+import { useMediaQuery } from "hooks"
 
 import { ctm, todoSVG } from "./HomePageStyledComponents"
-import useMediaQuery from "hooks/useMediaQuery"
 
 const HomePage = () => {
   const dispatch = useDispatch()
