@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 
-import { Fab, Box, Tabs, Tab, Typography, Button } from "@mui/material"
+import { Box, Tabs, Typography, Button } from "@mui/material"
 import AddIcon from "@mui/icons-material/Add"
 
 import TaskDialog from "components/TaskDialog"
@@ -11,10 +11,10 @@ import {
   getTasksAction,
   addTaskAction,
   editTaskAction,
-  deleteTaskAction
+  deleteTaskAction,
 } from "redux/ducks/taskDuck"
 import TaskCard from "components/TaskCard"
-import { TaskList } from "./TasksPageSC"
+import { StyledTabs, TaskList } from "./TasksPageSC"
 
 const TabPanel = ({ className, children, value, index, prerender }) => (
   <div
@@ -32,7 +32,7 @@ TabPanel.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   value: PropTypes.number,
   index: PropTypes.number,
-  prerender: PropTypes.bool
+  prerender: PropTypes.bool,
 }
 
 const TasksPage = () => {
@@ -96,8 +96,8 @@ const TasksPage = () => {
           aria-label="tabs"
           centered
         >
-          <Tab label="Active Tasks" id="active" />
-          <Tab label="Finished Tasks" id="finished" />
+          <StyledTabs label="Active Tasks" id="active" />
+          <StyledTabs label="Finished Tasks" id="finished" />
         </Tabs>
         <Box mt={4} />
         <TabPanel value={value} index={0}>
@@ -151,7 +151,7 @@ const TasksPage = () => {
             justifyContent: "left",
             display: "flex",
             alignItems: "center",
-            paddingTop: "16px"
+            paddingTop: "16px",
           }}
         >
           <Button onClick={openDialog} sx={{ textTransform: "capitalize" }}>
