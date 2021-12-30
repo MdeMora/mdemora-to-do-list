@@ -15,6 +15,7 @@ import {
 } from "redux/ducks/taskDuck"
 import TaskCard from "components/TaskCard"
 import { StyledTabs, TaskList } from "./TasksPageSC"
+import { useMediaQuery } from "hooks"
 
 const TabPanel = ({ className, children, value, index, prerender }) => (
   <div
@@ -42,6 +43,8 @@ const TasksPage = () => {
   const [value, setValue] = useState(0)
   const [selectedTask, setSelectedTask] = useState(undefined)
   const [openTaskDialog, setOpenTaskDialog] = useState(false)
+
+  const { isMobileScreen } = useMediaQuery()
 
   const handleTabChange = (_, newValue) => setValue(newValue)
 
@@ -89,7 +92,11 @@ const TasksPage = () => {
 
   return (
     <Box flex="1">
-      <Box maxWidth={900} margin="120px auto">
+      <Box
+        maxWidth={900}
+        margin={`${isMobileScreen ? 16 : 120}px auto`}
+        p={isMobileScreen ? 2 : 0}
+      >
         <Tabs
           value={value}
           onChange={handleTabChange}
