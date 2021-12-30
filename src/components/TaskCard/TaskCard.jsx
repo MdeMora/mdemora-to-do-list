@@ -37,7 +37,7 @@ const TaskItem = ({ task, onEdit, onFinish, onDelete }) => {
 
       <TaskCardContent>
         <TaskCardTitle>
-          <Typography variant="h6">{task.name}</Typography>
+          <Typography variant="subtitle1">{task.name}</Typography>
         </TaskCardTitle>
         <Typography>{task.description}</Typography>
       </TaskCardContent>
