@@ -88,7 +88,7 @@ const TasksPage = () => {
   const finishedTasks = sortedTasks.filter(task => task.finished)
 
   return (
-    <Box maxWidth={900} margin="0 auto">
+    <Box maxWidth={900} margin="0 auto" flex="1">
       <Tabs
         value={value}
         onChange={handleTabChange}
