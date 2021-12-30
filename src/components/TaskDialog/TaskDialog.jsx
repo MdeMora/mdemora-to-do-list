@@ -3,31 +3,34 @@ import PropTypes from "prop-types"
 import {
   Dialog,
   DialogContent,
-  DialogTitle,
-  TextField,
   Box,
   Button,
-  DialogActions
+  Input,
+  Typography,
 } from "@mui/material"
+import AddIcon from "@mui/icons-material/Add"
+import ClearIcon from "@mui/icons-material/Clear"
+
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { taskSchema } from "constants/schemas"
+import { StyledPaper, DeleteButton } from "./TaskDialogSC"
 
 const TaskDialog = ({ open, onClose, onSave, task }) => {
   const defaultValues = {
     name: task?.name ?? "",
     description: task?.description ?? "",
-    date: task?.date
+    date: task?.date,
   }
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     resolver: yupResolver(yup.object().shape(taskSchema)),
-    defaultValues: { ...defaultValues } // Recommended by react-hook-form
+    defaultValues: { ...defaultValues }, // Recommended by react-hook-form
   })
 
   const getId = () => (task?.id ? { id: task?.id } : "")
@@ -41,36 +44,48 @@ const TaskDialog = ({ open, onClose, onSave, task }) => {
 
   const actions = []
   return (
-    <Dialog open={open} actions={actions} onClose={onClose}>
-      <DialogTitle>{task ? "Edit" : "Add"} To-do Task</DialogTitle>
+    <Dialog
+      open={open}
+      actions={actions}
+      onClose={onClose}
+      PaperComponent={StyledPaper}
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <DialogContent>
-          <Box mt={2} />
-
-          <TextField
+          <Input
             id="name"
-            label="Name"
+            placeholder="Task Title"
             fullWidth
             error={Boolean(errors?.name?.message)}
             helperText={errors?.name?.message}
+            disableUnderline
             {...register("name")}
           />
           <Box mt={2} />
-          <TextField
+          <Input
             id="description"
-            label="Description"
+            placeholder="Description"
             multiline
-            maxRows={4}
+            minRows={6}
             fullWidth
+            disableUnderline
             error={Boolean(errors?.description?.message)}
             helperText={errors?.description?.message}
             {...register("description")}
           />
+          <Button type="submit" sx={{ textTransform: "capitalize" }}>
+            <AddIcon />
+            <Typography variant="body1" color="black">
+              Add
+            </Typography>
+          </Button>
+          <DeleteButton onClick={onClose} color="error">
+            <ClearIcon />
+          </DeleteButton>
         </DialogContent>
-        <DialogActions>
+        {/* <DialogActions>
           <Button type="submit">Save</Button>
-          <Button onClick={onClose}>Cancel</Button>
-        </DialogActions>
+        </DialogActions> */}
       </form>
     </Dialog>
   )
@@ -80,7 +95,7 @@ TaskDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
-  task: PropTypes.object
+  task: PropTypes.object,
 }
 
 export default TaskDialog
