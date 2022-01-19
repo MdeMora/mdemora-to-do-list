@@ -18,7 +18,7 @@ const taskCard = ({ theme, active, finished }) => ({
 
 const taskCardContent = () => ({})
 const taskCardActions = () => ({})
-const taskCardTitle = ({ theme }) => ({})
+const taskCardTitle = () => ({})
 const taskCardDate = ({ theme }) => ({
   position: "absolute",
   right: 0,

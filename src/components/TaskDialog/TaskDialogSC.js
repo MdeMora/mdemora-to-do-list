@@ -7,7 +7,7 @@ export const StyledPaper = styled(Paper)(({ theme }) => ({
   width: 710,
 }))
 
-export const DeleteButton = styled(IconButton)(({ theme }) => ({
+export const DeleteButton = styled(IconButton)(() => ({
   position: "absolute",
   top: 0,
   right: 0,
