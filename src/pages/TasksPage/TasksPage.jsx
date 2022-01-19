@@ -81,14 +81,10 @@ const TasksPage = () => {
   }
 
   useEffect(() => {
-    getLocalUserAction()(dispatch)
-    !user && getTasksAction(user)(dispatch)
-  }, [user])
-
-  useEffect(() => {
-    !tasks && getTasksAction(user)(dispatch)
+    !user && getLocalUserAction()(dispatch)
+    getTasksAction(user)(dispatch)
     console.log("get on undefiend")
-  }, [tasks])
+  }, [user])
 
   const sortedTasks = tasks.sort(function (a, b) {
     const nameA = a.name.toLowerCase(),
