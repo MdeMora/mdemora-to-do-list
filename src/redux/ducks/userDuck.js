@@ -40,7 +40,7 @@ export const signInWithGoogleAction = history => async dispatch => {
         uid: user.uid,
         name: user.displayName,
         authProvider: "google",
-        email: user.email
+        email: user.email,
       }
       await setDoc(userRef, userData)
     }
@@ -49,7 +49,7 @@ export const signInWithGoogleAction = history => async dispatch => {
     history && history.push(URL.APP)
     return dispatch({
       type: SIGN_IN_WITH_GOOGLE,
-      payload: docSnap.data()
+      payload: docSnap.data(),
     })
   } catch (err) {
     console.error(err.message)
@@ -62,7 +62,7 @@ export const signOutAction = history => async dispatch => {
   localStorage.removeItem(USER_DATA_KEY)
   dispatch({
     type: SIGN_OUT,
-    payload: undefined
+    payload: undefined,
   })
 }
 
@@ -71,7 +71,7 @@ export const getLocalUserAction = () => async dispatch => {
   if (!userKey) {
     return dispatch({
       type: LOCAL_USER,
-      payload: null
+      payload: null,
     })
   }
   const userRef = doc(db, "users", userKey)
@@ -79,7 +79,7 @@ export const getLocalUserAction = () => async dispatch => {
 
   dispatch({
     type: LOCAL_USER,
-    payload: userDoc.data()
+    payload: userDoc.data(),
   })
 }
 
