@@ -16,6 +16,7 @@ import {
 import TaskCard from "components/TaskCard"
 import { StyledTabs, TaskList } from "./TasksPageSC"
 import { useMediaQuery } from "hooks"
+import { getLocalUserAction } from "redux/ducks/userDuck"
 
 const TabPanel = ({ className, children, value, index, prerender }) => (
   <div
@@ -80,8 +81,10 @@ const TasksPage = () => {
   }
 
   useEffect(() => {
+    !user && getLocalUserAction()(dispatch)
     getTasksAction(user)(dispatch)
-  }, [])
+    console.log("get on undefiend")
+  }, [user])
 
   const sortedTasks = tasks.sort(function (a, b) {
     const nameA = a.name.toLowerCase(),

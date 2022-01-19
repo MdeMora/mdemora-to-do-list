@@ -22,7 +22,7 @@ const useFirebase = () => {
           uid: user.uid,
           name: user.displayName,
           authProvider: "google",
-          email: user.email
+          email: user.email,
         }
         await setDoc(userRef, userData)
         setUser(userData)
@@ -38,7 +38,7 @@ const useFirebase = () => {
   return {
     user,
     signInWithGoogle,
-    logout
+    logout,
   }
 }
 export default useFirebase
