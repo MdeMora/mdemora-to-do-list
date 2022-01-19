@@ -83,7 +83,6 @@ const TasksPage = () => {
   useEffect(() => {
     !user && getLocalUserAction()(dispatch)
     getTasksAction(user)(dispatch)
-    console.log("get on undefiend")
   }, [user])
 
   const sortedTasks = tasks.sort(function (a, b) {

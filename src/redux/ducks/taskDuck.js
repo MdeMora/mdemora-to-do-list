@@ -75,8 +75,6 @@ export const getTasksAction = user => async dispatch => {
   const q = query(collection(db, `users/${user?.uid}/tasks`))
   const querySnapshot = await getDocs(q)
 
-  console.log(querySnapshot.forEach(doc => doc.data()))
-
   const tasksList = []
   querySnapshot.forEach(doc => tasksList.push({ ...doc.data(), id: doc.id }))
 
